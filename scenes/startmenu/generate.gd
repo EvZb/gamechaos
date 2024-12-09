@@ -1,9 +1,8 @@
 extends Control
 
 var biome:Array[Vector2i] = []
-var biomelist:Array[Vector2i] = [Vector2i(0,0),Vector2i(1,0),Vector2i(2,0),Vector2i(3,0),Vector2i(4,0),Vector2i(5,0),Vector2i(6,0),Vector2i(7,0),Vector2i(8,0),Vector2i(9,0)]
 var biomeshuffle:Array[Vector2i] = []
-var biomecount:int = biomelist.size()
+var biomecount:int = V.BIOMETILES.size()
 var world:Node
 
 func _ready() -> void:
@@ -14,31 +13,50 @@ func Set(coord:Vector2i,tile:Vector2i) -> void:
 
 func GenerateWorld() -> void:
 	var maxsize:int = 128
-	D.biomemap.resize(maxsize*maxsize)
+	var maxsize1:int = maxsize - 1
+	D.biomemap.resize(maxsize)
+	var arrr:PackedStringArray
+	arrr.resize(maxsize)
+	D.biomemap.fill(arrr)
 	D.areamap = D.biomemap
-	var unit:int = maxsize/sqrt(biomecount)
+	var unit:int = maxsize / sqrt(biomecount)
 	var biomeloc:Vector2i
 	var biomewidth:int
 	var currentbiome:Vector2i
 	var currentheight:int = 0
-	biomeshuffle = biomelist.duplicate()
+	var biomenum:int
+	var biomename:String
+	var coord:Vector2i
+	biomeshuffle = V.BIOMETILES.duplicate()
 	for i in biomecount: biome.push_back(biomeshuffle.pop_at(randi()%biomeshuffle.size()))
-	for c in maxsize/biomecount:
+	for c in maxsize / biomecount:
 		for b in maxsize/biomecount:
-			biomewidth = (randi()%unit+unit)/2
+			biomewidth = (randi()%unit+unit) / 2
 			biomeloc = Vector2i(randi()%maxsize,randi()%maxsize)
-			currentbiome = biome[randi()%biomecount]
+			biomenum = randi()%biomecount
+			currentbiome = biome[biomenum]
+			biomename = V.BIOMENAMES[biomenum]
 			currentheight = 0
 			Set(biomeloc,currentbiome)
 			for n in biomewidth:
 				currentheight += randi()%2
 				for tile in currentheight:
-					Set(Vector2i(biomeloc.x+n-biomewidth,biomeloc.y + tile),currentbiome)
-					Set(Vector2i(biomeloc.x+n-biomewidth,biomeloc.y - tile),currentbiome)
+					coord = Vector2i(biomeloc.x + n - biomewidth,biomeloc.y - tile).clampi(0,maxsize1)
+					Set(coord,currentbiome)
+					D.biomemap[coord.x][coord.y] = biomename
+					coord.y = mini(biomeloc.y + tile,maxsize1)
+					Set(coord,currentbiome)
+					D.biomemap[coord.x][coord.y] = biomename
 			for n in biomewidth:
 				currentheight -= randi()%2
 				for tile in currentheight:
-					Set(Vector2i(biomeloc.x+n,biomeloc.y + tile),currentbiome)
-					Set(Vector2i(biomeloc.x+n,biomeloc.y - tile),currentbiome)
-	for n in D.biomemap.size():
-		D.biomemap[n] = world.get_cell_atlas_coords(Vector2i(n/maxsize,n%maxsize))
+					coord = Vector2i(biomeloc.x + n,biomeloc.y - tile).clampi(0,maxsize1)
+					Set(coord,currentbiome)
+					D.biomemap[coord.x][coord.y] = biomename
+					coord.y = mini(biomeloc.y + tile,maxsize1)
+					Set(coord,currentbiome)
+					D.biomemap[coord.x][coord.y] = biomename
+	print(str(D.biomemap[1][2]))
+	print(str(D.biomemap[2][3]))
+	print(str(D.biomemap[3][4]))
+	

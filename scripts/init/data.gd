@@ -1,4 +1,4 @@
 extends Node
 
-var biomemap:Array[Vector2i]
-var areamap:Array[Vector2i]
+var biomemap:Array[PackedStringArray]
+var areamap:Array[PackedStringArray]
