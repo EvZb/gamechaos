@@ -1,0 +1,117 @@
+[gd_scene load_steps=6 format=3 uid="uid://d38b77fongsw8"]
+
+[ext_resource type="Script" path="res://scenes/mainmenu/mainmenu.gd" id="1_ubo7q"]
+[ext_resource type="PackedScene" uid="uid://bb5lxt1dfx046" path="res://scenes/mainmenu/initial/Initial.tscn" id="2_3lkp3"]
+[ext_resource type="PackedScene" uid="uid://cejtb2clvbyur" path="res://scenes/mainmenu/settings/settings.tscn" id="3_akqaa"]
+[ext_resource type="PackedScene" uid="uid://b43thgki73oje" path="res://scenes/mainmenu/saves/saves.tscn" id="3_goahg"]
+[ext_resource type="PackedScene" uid="uid://c7p5pawlfyu5l" path="res://scenes/mainmenu/start/start.tscn" id="4_iy4ef"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_ubo7q")
+metadata/_edit_lock_ = true
+
+[node name="SubMenu" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 512.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+metadata/_edit_lock_ = true
+
+[node name="Background" type="ColorRect" parent="SubMenu"]
+layout_mode = 2
+offset_right = 1408.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0.133333, 0.333333, 0.333333, 1)
+metadata/_edit_lock_ = true
+
+[node name="Initial" parent="SubMenu" instance=ExtResource("2_3lkp3")]
+layout_mode = 1
+offset_left = 0.0
+
+[node name="Saves" parent="SubMenu" instance=ExtResource("3_goahg")]
+visible = false
+
+[node name="Start" parent="SubMenu" instance=ExtResource("4_iy4ef")]
+
+[node name="Settings" parent="SubMenu" instance=ExtResource("3_akqaa")]
+visible = false
+
+[node name="Options" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 512.0
+offset_bottom = 1080.0
+metadata/_edit_lock_ = true
+
+[node name="Background" type="ColorRect" parent="Options"]
+layout_mode = 2
+offset_right = 512.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0.133333, 0.333333, 0.333333, 1)
+metadata/_edit_lock_ = true
+
+[node name="Icon" type="Button" parent="Options"]
+layout_mode = 2
+offset_right = 512.0
+offset_bottom = 512.0
+text = "Icon"
+expand_icon = true
+metadata/_edit_lock_ = true
+
+[node name="Saves" type="Button" parent="Options"]
+layout_mode = 0
+offset_top = 512.0
+offset_right = 512.0
+offset_bottom = 608.0
+theme_override_font_sizes/font_size = 32
+text = "Saves"
+metadata/_edit_lock_ = true
+
+[node name="Start" type="Button" parent="Options"]
+layout_mode = 0
+offset_top = 634.0
+offset_right = 512.0
+offset_bottom = 730.0
+theme_override_font_sizes/font_size = 32
+text = "New Game"
+metadata/_edit_lock_ = true
+
+[node name="Multiplayer" type="Button" parent="Options"]
+visible = false
+layout_mode = 0
+offset_top = 752.0
+offset_right = 512.0
+offset_bottom = 848.0
+theme_override_font_sizes/font_size = 32
+text = "Multiplayer"
+metadata/_edit_lock_ = true
+
+[node name="Settings" type="Button" parent="Options"]
+layout_mode = 0
+offset_top = 864.0
+offset_right = 512.0
+offset_bottom = 960.0
+theme_override_font_sizes/font_size = 32
+text = "Settings"
+metadata/_edit_lock_ = true
+
+[node name="Exit" type="Button" parent="Options"]
+layout_mode = 0
+offset_top = 984.0
+offset_right = 512.0
+offset_bottom = 1080.0
+theme_override_font_sizes/font_size = 32
+text = "Exit"
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Options/Icon" to="." method="_on_icon_pressed"]
+[connection signal="pressed" from="Options/Saves" to="." method="_on_saves_pressed"]
+[connection signal="pressed" from="Options/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Options/Multiplayer" to="." method="_on_multiplayer_pressed"]
+[connection signal="pressed" from="Options/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Options/Exit" to="." method="_on_exit_pressed"]

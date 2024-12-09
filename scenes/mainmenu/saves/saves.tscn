@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://b43thgki73oje"]
+
+[ext_resource type="Script" path="res://scenes/mainmenu/saves/saves.gd" id="1_qlr5a"]
+
+[node name="Saves" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qlr5a")
+metadata/_edit_lock_ = true
+
+[node name="SaveButtons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 1080.0
+metadata/_edit_lock_ = true
+
+[node name="SaveData" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 256.0
+offset_right = 1150.0
+offset_bottom = 1080.0
+metadata/_edit_lock_ = true
+
+[node name="LoadButtons" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1152.0
+offset_right = 1408.0
+offset_bottom = 1080.0
+metadata/_edit_lock_ = true

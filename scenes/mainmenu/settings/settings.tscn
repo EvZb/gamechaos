@@ -1,0 +1,244 @@
+[gd_scene load_steps=6 format=3 uid="uid://cejtb2clvbyur"]
+
+[ext_resource type="Script" path="res://scenes/mainmenu/settings/settings.gd" id="1_4vr1m"]
+[ext_resource type="Script" path="res://scenes/mainmenu/settings/game.gd" id="2_bavnv"]
+[ext_resource type="Script" path="res://scenes/mainmenu/settings/controls.gd" id="3_xx4gu"]
+[ext_resource type="Script" path="res://scenes/mainmenu/settings/graphics.gd" id="4_lxu6i"]
+[ext_resource type="Script" path="res://scenes/mainmenu/settings/other.gd" id="5_sgget"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_4vr1m")
+metadata/_edit_lock_ = true
+
+[node name="MenuButton" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1408.0
+offset_bottom = 128.0
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="MenuButton"]
+layout_mode = 0
+offset_right = 1408.0
+offset_bottom = 128.0
+color = Color(1.44392e-07, 0.350474, 0.383546, 1)
+metadata/_edit_lock_ = true
+
+[node name="Game" type="Button" parent="MenuButton"]
+layout_mode = 0
+offset_right = 352.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 64
+text = "Game"
+metadata/_edit_lock_ = true
+
+[node name="Controls" type="Button" parent="MenuButton"]
+layout_mode = 0
+offset_left = 352.0
+offset_right = 704.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 64
+text = "Controls"
+metadata/_edit_lock_ = true
+
+[node name="Graphics" type="Button" parent="MenuButton"]
+layout_mode = 0
+offset_left = 704.0
+offset_right = 1056.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 64
+text = "Graphics"
+metadata/_edit_lock_ = true
+
+[node name="Other" type="Button" parent="MenuButton"]
+layout_mode = 0
+offset_left = 1056.0
+offset_right = 1408.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 64
+text = "Other"
+metadata/_edit_lock_ = true
+
+[node name="Options" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 128.0
+offset_right = 1408.0
+offset_bottom = 1080.0
+metadata/_edit_lock_ = true
+
+[node name="Game" type="Control" parent="Options"]
+visible = false
+anchors_preset = 0
+script = ExtResource("2_bavnv")
+metadata/_edit_lock_ = true
+
+[node name="TickRate" type="OptionButton" parent="Options/Game"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 320.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 32
+alignment = 1
+selected = 0
+item_count = 6
+popup/item_0/text = "1"
+popup/item_1/text = "2"
+popup/item_1/id = 1
+popup/item_2/text = "3"
+popup/item_2/id = 2
+popup/item_3/text = "4"
+popup/item_3/id = 3
+popup/item_4/text = "5"
+popup/item_4/id = 4
+popup/item_5/text = "6"
+popup/item_5/id = 5
+metadata/_edit_lock_ = true
+
+[node name="AutoTick" type="OptionButton" parent="Options/Game"]
+layout_mode = 0
+offset_left = 386.0
+offset_top = 64.0
+offset_right = 642.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 32
+alignment = 1
+selected = 0
+item_count = 5
+popup/item_0/text = "0"
+popup/item_1/text = "1"
+popup/item_1/id = 1
+popup/item_2/text = "2"
+popup/item_2/id = 2
+popup/item_3/text = "3"
+popup/item_3/id = 3
+popup/item_4/text = "4"
+popup/item_4/id = 4
+metadata/_edit_lock_ = true
+
+[node name="Apply" type="Button" parent="Options/Game"]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 824.0
+offset_right = 1216.0
+offset_bottom = 952.0
+theme_override_font_sizes/font_size = 64
+text = "Apply Game"
+metadata/_edit_lock_ = true
+
+[node name="Controls" type="Control" parent="Options"]
+visible = false
+anchors_preset = 0
+script = ExtResource("3_xx4gu")
+metadata/_edit_lock_ = true
+
+[node name="Apply" type="Button" parent="Options/Controls"]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 824.0
+offset_right = 1216.0
+offset_bottom = 952.0
+theme_override_font_sizes/font_size = 64
+text = "Apply Controls"
+metadata/_edit_lock_ = true
+
+[node name="Graphics" type="Control" parent="Options"]
+visible = false
+anchors_preset = 0
+script = ExtResource("4_lxu6i")
+metadata/_edit_lock_ = true
+
+[node name="Fullscreen" type="OptionButton" parent="Options/Graphics"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 320.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 32
+alignment = 1
+icon_alignment = 1
+expand_icon = true
+selected = 0
+item_count = 2
+popup/item_0/text = "Fullscreen Off"
+popup/item_1/text = "Fullscreen On"
+popup/item_1/id = 1
+metadata/_edit_lock_ = true
+
+[node name="Resolution" type="OptionButton" parent="Options/Graphics"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 64.0
+offset_right = 576.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 32
+alignment = 1
+icon_alignment = 1
+expand_icon = true
+selected = 0
+item_count = 7
+popup/item_0/text = "854x480"
+popup/item_1/text = "960x540"
+popup/item_1/id = 1
+popup/item_2/text = "1024x576"
+popup/item_2/id = 2
+popup/item_3/text = "1280x720"
+popup/item_3/id = 3
+popup/item_4/text = "1366x768"
+popup/item_4/id = 4
+popup/item_5/text = "1600x900"
+popup/item_5/id = 5
+popup/item_6/text = "1920x1080"
+popup/item_6/id = 6
+metadata/_edit_lock_ = true
+
+[node name="Apply" type="Button" parent="Options/Graphics"]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 824.0
+offset_right = 1216.0
+offset_bottom = 952.0
+theme_override_font_sizes/font_size = 64
+text = "Apply Graphics"
+metadata/_edit_lock_ = true
+
+[node name="Other" type="Control" parent="Options"]
+visible = false
+anchors_preset = 0
+script = ExtResource("5_sgget")
+metadata/_edit_lock_ = true
+
+[node name="SystemLog" type="OptionButton" parent="Options/Other"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 320.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 32
+alignment = 1
+icon_alignment = 1
+expand_icon = true
+selected = 0
+item_count = 2
+popup/item_0/text = "Sytem Log Off"
+popup/item_1/text = "System Log On"
+popup/item_1/id = 1
+metadata/_edit_lock_ = true
+
+[node name="Apply" type="Button" parent="Options/Other"]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 824.0
+offset_right = 1216.0
+offset_bottom = 952.0
+theme_override_font_sizes/font_size = 64
+text = "Apply Other"
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="MenuButton/Game" to="." method="_on_game_pressed"]
+[connection signal="pressed" from="MenuButton/Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="MenuButton/Graphics" to="." method="_on_graphics_pressed"]
+[connection signal="pressed" from="MenuButton/Other" to="." method="_on_other_pressed"]
+[connection signal="pressed" from="Options/Game/Apply" to="Options/Game" method="_on_apply_pressed"]
+[connection signal="pressed" from="Options/Graphics/Apply" to="Options/Graphics" method="_on_apply_pressed"]

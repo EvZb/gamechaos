@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c7vlk70vd3e76"]
+
+[node name="TestItem" type="Sprite2D"]
+visible = false
+scale = Vector2(0.2, 0.2)

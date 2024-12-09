@@ -1,0 +1,59 @@
+BASE:
+
+head-16x12
+forhead-8
+eyeb-4
+nose-0
+mouth-2
+chin-2
+
+neck 4x4
+
+body 28x11+7
+pit/topb-25
+breast/mid-30
+waist/button 35x64 (90)
+hip 20x80
+hipb-35
+gen-10
+
+kneet-75x25
+kneeb-15x20
+calf-x25
+ank-90x10
+toe-25x20
+
+top-20
+mid-28
+bot-48
+
+REAL?:
+
+head-64x36
+forhead-25
+eyeb-8
+nose-10
+mouth-8
+chin-8
+
+neck 20x20
+
+body 150+70+32
+pit/topb-25
+breast/mid-30
+waist/button 35x64 (90)
+hip 20x80
+hipb-35
+gen-10
+
+kneet-75x25
+kneeb-15x20
+calf-x25
+ank-90x10
+toe-25x20
+
+top-80
+mid-150
+bot-210
+
+TEST:

@@ -1,0 +1,53 @@
+<<<SKILLS/STATS EXPLAINED>>>
+Every entity has the same stat types, but may have different skills
+
+Every skill / stat has a Level, Potential, Growth, Base, Addition, and Multiplier
+
+Base is the base level
+
+Level is used to determine calculations and is determined by its Base * Multiplier + Addition
+
+Base level is increased naturally through growth when growth = level * 100
+
+Growth is increased by (incoming xp / Base) * potential + 1
+
+<<<STAT TYPES>>>
+
+Health - increases hp, reduces illness damage taken
+Body - increases elemental defense, increases health regen
+
+Spells - increases magic accuracy, increases magic damage
+Magic - increases magic regen, increases mp
+
+Mental - increases sp, increases mental defense
+Purity - increases magical defense, increases mental
+Meditation - increases spirit regen
+
+Insight - increases detection, increases learning speed
+
+Strength - increases max mass, increase physical damage
+Combat - increases crit chance, increases accuracy
+Dexterity - increases max bulk, increase range accuracy
+
+Speed - attack speed, adds to evasion, reduced by bulk
+Movement - movement speed, adds to evasion, reduced by mass
+Evasion - dodge changce, reduced by bulk
+Luck - modifies chance based calculations
+
+<<<SKILL TYPES>>>
+(weapon name) - increases accuracy and damage with a weapon
+Carry - increases max bulk and mass
+Crafting - increases item quality, increases appraisal
+Smithing - increases equipment quality, reduces elemental duration
+Knowledge - increases rune capability, reduces mental duration
+Mixing - increases potion quality, reduces magic duration
+Cooking - increases food quality, reduces physical duration
+
+<<<DAMAGE TYPES>>>
+Physical
+Magic
+Mental
+Elemental
+Other
+
+<<<DAMAGE EXPLAINED>>>

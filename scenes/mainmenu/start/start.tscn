@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7p5pawlfyu5l"]
+
+[ext_resource type="Script" path="res://scenes/mainmenu/start/start.gd" id="1_nvmck"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7ymb"]
+bg_color = Color(0.494118, 0.054902, 0.423529, 1)
+
+[node name="Start" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_nvmck")
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 412.0
+offset_right = 1408.0
+offset_bottom = 668.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_e7ymb")
+metadata/_edit_lock_ = true
+
+[node name="Text" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 1408.0
+offset_bottom = 128.0
+theme_override_colors/font_color = Color(0.887815, 0.690191, 0.220936, 1)
+theme_override_font_sizes/font_size = 64
+text = "Start a new game?"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Confirm" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 160.0
+offset_right = 320.0
+offset_bottom = 256.0
+theme_override_font_sizes/font_size = 48
+text = "Confirm"
+metadata/_edit_lock_ = true
+
+[node name="Cancel" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 1088.0
+offset_top = 160.0
+offset_right = 1344.0
+offset_bottom = 256.0
+theme_override_font_sizes/font_size = 48
+text = "Cancel"
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Panel/Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="Panel/Cancel" to="." method="_on_cancel_pressed"]

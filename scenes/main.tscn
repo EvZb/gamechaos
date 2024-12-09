@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://dttxi4rgauogy"]
+
+[ext_resource type="PackedScene" uid="uid://d2jihnloqithr" path="res://scenes/game/game.tscn" id="1_qaqwc"]
+[ext_resource type="PackedScene" uid="uid://d38b77fongsw8" path="res://scenes/mainmenu/main_menu.tscn" id="2_6l4pn"]
+[ext_resource type="PackedScene" uid="uid://c31uqenbe0hdk" path="res://scenes/startmenu/startmenu.tscn" id="2_80es0"]
+[ext_resource type="PackedScene" uid="uid://c7oy1x0h1bho4" path="res://scenes/multiplayer/multiplayer.tscn" id="3_gtgd6"]
+[ext_resource type="PackedScene" uid="uid://cj4i33aex8mnr" path="res://scenes/character/character.tscn" id="6_bt7ln"]
+
+[node name="Main" type="Node"]
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+color = Color(0.424498, 0.220551, 0.314367, 0.4)
+metadata/_edit_lock_ = true
+
+[node name="Game" parent="." instance=ExtResource("1_qaqwc")]
+
+[node name="Character" parent="." instance=ExtResource("6_bt7ln")]
+visible = false
+
+[node name="StartMenu" parent="." instance=ExtResource("2_80es0")]
+visible = false
+
+[node name="Multiplayer" parent="." instance=ExtResource("3_gtgd6")]
+
+[node name="MainMenu" parent="." instance=ExtResource("2_6l4pn")]
