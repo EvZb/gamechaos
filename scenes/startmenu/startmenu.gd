@@ -6,6 +6,5 @@ func reload() -> void:
 
 func hide_menus() -> void:
 	$Menus/Main.hide()
-	$Menus/Players.hide()
-	$Menus/Enemies.hide()
+	$Menus/Character.hide()
 	$Menus/World.hide()
