@@ -1,0 +1,18 @@
+<<<WORLD EXPLAINED>>>
+The world will be generated in a grid of areas
+
+Clumps of the grid will be split into various biomes
+
+Biomes influence the general theme of an area (types of creatures, plants, etc)
+
+Areas have one major feature (terrain, city, dungeon, etc)
+
+Areas are split into layers that have the main game content (layers are like the floors of a building)
+
+Layers are made of tiles, objects, and creatures
+
+<<<BIOMES>>>
+
+<<<AREAS>>>
+
+<<<LAYERS>>>

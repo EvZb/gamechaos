@@ -1,4 +1,4 @@
-<<<SKILLS/STATS EXPLAINED>>>
+<<<SKILLS / STATS EXPLAINED>>>
 Every entity has the same stat types, but may have different skills
 
 Every skill / stat has a Level, Potential, Growth, Base, Addition, and Multiplier
