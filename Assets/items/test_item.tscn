@@ -1,5 +1,7 @@
-[gd_scene format=3 uid="uid://c7vlk70vd3e76"]
+[gd_scene load_steps=2 format=3 uid="uid://c7vlk70vd3e76"]
+
+[ext_resource type="Texture2D" uid="uid://blguvikk8k880" path="res://Assets/sprites/default.png" id="1_ferxg"]
 
 [node name="TestItem" type="Sprite2D"]
 visible = false
-scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_ferxg")

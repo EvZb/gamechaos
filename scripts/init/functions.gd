@@ -9,3 +9,7 @@ func Log(message:String,newentry:bool=true) -> void:
 		else: V.LOGINDEX += 1
 		V.SYSTEMLOG[V.LOGINDEX] = message
 	else:	V.SYSTEMLOG[V.LOGINDEX] += message
+
+func GenArea() -> void:pass
+
+func GenLayer() -> void:pass
