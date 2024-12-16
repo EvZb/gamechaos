@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s2br7k4vliw0"
-path="res://.godot/imported/temptiles.png-7275d075fdcce5acac49f32bf59a3b7d.ctex"
+uid="uid://grnas8ooue4p"
+path="res://.godot/imported/items.png-78a154ed745585cffb5a1923a7bbe8f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/tiles/temptiles.png"
-dest_files=["res://.godot/imported/temptiles.png-7275d075fdcce5acac49f32bf59a3b7d.ctex"]
+source_file="res://Assets/sprites/objects/items.png"
+dest_files=["res://.godot/imported/items.png-78a154ed745585cffb5a1923a7bbe8f0.ctex"]
 
 [params]
 
