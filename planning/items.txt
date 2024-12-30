@@ -1,0 +1,5 @@
+Every item has a type and material that determines its base values.
+
+Bulk = based on item type
+Mass = amount of material x material mass
+Value = type modifier x quality + material value

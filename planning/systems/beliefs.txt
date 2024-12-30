@@ -1,0 +1,9 @@
+BELIEF TYPES: EFFECTS
+
+Elemental: increases affinity for an element
+
+Heroic: increases faith toward a character, the character can provide blessings based on their stats
+
+Spiritual: increases skills associated with a concept
+
+Ritual: increases benefits by following certain rules

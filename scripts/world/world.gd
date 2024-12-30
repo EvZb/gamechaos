@@ -1,8 +1,8 @@
 class_name World
 
 var Areas = []
-var Layers = []
-var Inventories = []
+var Layers:Array[AreaLayer] = []
+var Inventories:Array[Inventory] = []
 var Characters = []
 var Players = []
 
@@ -16,7 +16,7 @@ func AddLayer(layer:AreaLayer) -> int:
 		return layernum
 	else:
 		Layers.push_back(layer.new())
-		return Layers.size
+		return Layers.size()
 
 func RemLayer(layer:int) -> void:
 	Layers[layer] = null
@@ -29,12 +29,12 @@ func AddInventory(inventory:Inventory) -> int:
 		return invnum
 	else:
 		Inventories.push_back(inventory.new())
-		return Inventories.size
+		return Inventories.size()
 
 func AddCharacter(character) -> int:
 	Characters.push_back(character.new())
-	return Characters.size
+	return Characters.size()
 
 func AddPlayer() -> int:
 	Players.push_back(Player.new())
-	return Players.size
+	return Players.size()

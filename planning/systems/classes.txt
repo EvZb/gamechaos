@@ -1,0 +1,46 @@
+Element   -category -biome -class type
+
+Hope       -light    -plains        -fairy
+Decay      -dark   -snow        -demon
+Structure -metal  -mountain  -human
+Life          -water  -forest       -animal
+Will          -fire      -desert      -magic
+
+
+HUMANOID CLASSES
+Fairy: weak, specialize in exploring and support
+-Cleric (faith)
+-Spirit (luck)
+-Ghost (evasion)
+
+Demon: evil, specialize in fighting and stealth
+-Blood (combat)
+-Shadow (stealth)
+-Mist (dexterity)
+
+Human: crafty, specialize in crafting and expertise
+-Warrior(strength)
+-Guide (knowledge)
+-Smith (crafting)
+
+Animal: healthy, specialize in alchemy and survival
+-Cow (health)
+-Bunny (purity)
+-Fox (alchemy)
+
+Magic: specialize in detection and communication
+-Socialist (social)
+-Artist (mind)
+-Monk (sense)
+
+Mixed
+Wraith (demon / fairy)
+Hero (human / fairy)
+Cat (animal / fairy)
+Mage (magic / fairy)
+Lawyer (demon / human)
+Vampire (demon / animal)
+Succubus (demon / magic)
+Wizard (human / magic)
+Dog (human / animal)
+Elf (animal / magic)

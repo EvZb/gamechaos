@@ -1,0 +1,42 @@
+Bodies consist of parts with certain capabilities.
+
+
+
+
+=======================================================
+RACE TYPE (Main parts) [other parts]
+
+Humanoid:
+-Human (arm x2, leg x2, head, torso) [heart, eye x2, skin]
+
+Slime:
+-Slime <slime> (jelly) [core]
+
+Bug:
+-Spider <bug> (leg x8, head, body) [gland, fangs]
+
+=======================================================
+RACE PART TYPES [equipment]
+
+Humanoid:
+-Arm [glove, rings]
+-Leg [pants]
+-Head [hat, mask, neck]
+-Torso [shirt, belt]
+-Heart
+-Eye
+-Ears
+-Skin
+-Tail
+-horn
+
+Slime:
+-Jelly
+-Core
+
+Bug:
+-Leg
+-Head
+-Body
+-Gland
+-Fangs

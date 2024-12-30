@@ -15,7 +15,7 @@ func Generate() -> void:
 	GenerateAreas()
 
 func GenerateBiomes() -> void:
-	tiles = get_node(V.LAYERPATH + "World")
+	tiles = get_node(V.LAYERPATH + "World/Biomes")
 	var maxsize1:int = maxsize - 1
 	D.biomemap.clear()
 	D.biomemap.resize(maxsize)

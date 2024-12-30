@@ -1,0 +1,28 @@
+Base Stat (Element) - stat
+-Stat (explanation) [skills]
+
+
+Hope (Light) - Purity
+-Luck (affects chanced based events) [Gambling, Looting, Wilding]
+-Faith [Praying, Authority, Belief]
+-Speed [Evasion, Avoidance, Movement]
+
+Life (Water) - Health
+-Health [Regeneration, Vitality, Illness]
+-Purity [Corruption, Resistance, Karma]
+-Alchemy [Mixing, Cooking, Imbuing]
+
+Decay (Dark) - Dexterity
+-Combat [Weapon, Accuracy, Crit]
+-Stealth (hide from hearing, vision, or magic) [Quiet, Camo, Hide]
+-Dexterity [Shooting, Throwing, Speed]
+
+Structure (Metal) - Strength
+-Strength [Carry, Melee, Defense]
+-Knowledge [Ritual, Language, Identify]
+-Crafting [Smithing, Runing, Salvage]
+
+Will (Fire) - Spirit
+-Social [Charm, Talk, Business]
+-Spirit (soul strength, mental strength, energy) [Soul, Mind, Energy]
+-Sense [Hearing, Vision, Perception]

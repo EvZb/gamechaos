@@ -1,0 +1,26 @@
+BIOMES
+-Forest
+-Mountains
+-Plains
+-Desert
+-Snow
+
+DUNGEONS
+are created by the world as a collection of those lost to the chaos
+-metal solid structures and mechanical enemies + traps
+-water deadly plants and rare herbs / potions
+-light confusing layouts, rare enemies, hidden items and rituals
+-dark hidden dangers such as curses and strong enemies, low visibility
+-fire chaotic magic, enchantments and strange rules
+
+LOCATIONS
+Towns: protected by barriers from the chaos
+Cities: the main town to rule territories
+Dungeons: spawn after the chaos passes
+Schools: specialized locations to raise students for professions
+-martial arts and weapon training
+-alchemy, cooking and medicine
+-business and management
+-crafting and research
+-adventure and religion
+Dens: like dungeons the belong to creatures with a leader
