@@ -8,10 +8,6 @@ func pause(disable:bool) -> void:
 		set_process(true)
 		$Player.set_physics_process(true)
 
-func _ready() -> void:
-	set_process(false)
-	$Player.set_physics_process(false)
-
 func reload() -> void: get_tree().reload_current_scene()
 
 func _process(_delta) -> void:

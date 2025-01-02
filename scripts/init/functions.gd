@@ -10,6 +10,34 @@ func Log(message:String,newentry:bool=true) -> void:
 		V.SYSTEMLOG[V.LOGINDEX] = message
 	else:	V.SYSTEMLOG[V.LOGINDEX] += message
 
-func GenArea() -> void:pass
+func SaveWorld(worldname:String,savenum:int) -> void:
+	var scene = PackedScene.new()
+	scene.pack($/root/Main/Game)
+	V.Data.scene = scene
+	if(!DirAccess.dir_exists_absolute("user://saves/worlds/"+worldname)):
+		DirAccess.make_dir_absolute("user://saves/worlds/"+worldname)
+	var file = ConfigFile.new()
+	file.set_value("Data","WorldData",V.Data)
+	file.save("user://saves/worlds/"+worldname+"/"+str(savenum)+".ini")
 
-func GenLayer() -> void:pass
+func LoadWorld(worldname:String,savenum:int):
+	var file = ConfigFile.new()
+	var check = file.load("user://saves/worlds/"+worldname+"/"+str(savenum)+".ini")
+	if check == OK: V.Data = file.get_value("Data","WorldData")
+	$/root/Main/Game.free()
+	$/root/Main.add_child(V.Data.scene.instantiate())
+	$/root/Main.move_child($/root/Main/Game,0)
+	F.MainMenu()
+
+func MainMenu() -> void:
+	if(V.MAIN_MENU_OPEN):
+		V.MAIN_MENU_OPEN = false
+		$/root/Main/MainMenu.hide()
+		$/root/Main/MainMenu.hide_menus()
+		$/root/Main/Game/Player/Camera2D.enabled = true
+		$/root/Main/Game.pause(false)
+	else:
+		$/root/Main/Game.pause(true)
+		V.MAIN_MENU_OPEN = true
+		$/root/Main/MainMenu.show()
+		$/root/Main/Game/Player/Camera2D.enabled = false

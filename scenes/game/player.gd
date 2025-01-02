@@ -9,7 +9,7 @@ func _ready() -> void:
 	layers = %World/Layers
 
 func _physics_process(_delta) -> void:
-	D.time.Pass()
+	V.Data.time.Pass()
 	if(Input.is_action_pressed("direction")):
 		direction = Vector2i(Input.get_axis("ui_left","ui_right"),Input.get_axis("ui_up","ui_down"))
 	position.y = clamp(position.y + (direction.y * 128),64,16320)

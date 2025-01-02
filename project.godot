@@ -23,7 +23,6 @@ V="*res://scripts/init/variables.gd"
 F="*res://scripts/init/functions.gd"
 S="*res://scripts/init/settings.gd"
 LoadScript="res://scripts/init/loadscript.gd"
-D="*res://scripts/init/data.gd"
 
 [debug]
 

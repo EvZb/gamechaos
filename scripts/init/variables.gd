@@ -19,3 +19,4 @@ const TEXTURES:Dictionary = {
 	"Character":null,
 	"Creature":null
 }
+var Data = SaveData.new()

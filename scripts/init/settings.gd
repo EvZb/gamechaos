@@ -10,18 +10,14 @@ func Save(section:String,data:Dictionary) -> void:
 	for setting in data:
 		file.set_value(section,setting,data[setting])
 	file.save("user://settings/"+section+".ini")
-	F.Log("Saved settings")
 
 func Load(section:String) -> Dictionary:
 	var file = ConfigFile.new()
 	var check = file.load("user://settings/"+section+".ini")
 	var settings = get(section)
-	if check != OK:
-		F.Log(section+" settings not found")
-	else:
+	if check == OK:
 		for setting in file.get_section_keys(section):
 			settings[setting] = file.get_value(section,setting)
-		F.Log("Loaded "+section+" settings")
 	return settings
 
 var Game = {

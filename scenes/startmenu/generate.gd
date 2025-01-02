@@ -11,18 +11,21 @@ func Set(coord:Vector2i,tile:Vector2i) -> void:
 	tiles.set_cell(coord,0,tile)
 
 func Generate() -> void:
+	$/root/Main/Game.free()
+	$/root/Main.add_child(load("res://scenes/game/game.tscn").instantiate())
+	$/root/Main.move_child($/root/Main/Game,0)
 	GenerateBiomes()
 	GenerateAreas()
 
 func GenerateBiomes() -> void:
 	tiles = get_node(V.LAYERPATH + "World/Biomes")
 	var maxsize1:int = maxsize - 1
-	D.biomemap.clear()
-	D.biomemap.resize(maxsize)
+	V.Data.biomemap.clear()
+	V.Data.biomemap.resize(maxsize)
 	var arrr:PackedStringArray
 	arrr.resize(maxsize)
-	D.biomemap.fill(arrr)
-	D.areamap = D.biomemap.duplicate(true)
+	V.Data.biomemap.fill(arrr)
+	V.Data.areamap = V.Data.biomemap.duplicate(true)
 	var unit:int = maxsize / sqrt(biomecount)
 	var biomeloc:Vector2i
 	var biomewidth:int
@@ -48,20 +51,20 @@ func GenerateBiomes() -> void:
 				for tile in currentheight:
 					coord = Vector2i(biomeloc.x + n - biomewidth,biomeloc.y - tile).clampi(0,maxsize1)
 					Set(coord,currentbiome)
-					D.biomemap[coord.x][coord.y] = biomename
+					V.Data.biomemap[coord.x][coord.y] = biomename
 					coord.y = mini(biomeloc.y + tile,maxsize1)
 					Set(coord,currentbiome)
-					D.biomemap[coord.x][coord.y] = biomename
+					V.Data.biomemap[coord.x][coord.y] = biomename
 			#generate right side of biome
 			for n in biomewidth:
 				currentheight -= randi()%2
 				for tile in currentheight:
 					coord = Vector2i(biomeloc.x + n,biomeloc.y - tile).clampi(0,maxsize1)
 					Set(coord,currentbiome)
-					D.biomemap[coord.x][coord.y] = biomename
+					V.Data.biomemap[coord.x][coord.y] = biomename
 					coord.y = mini(biomeloc.y + tile,maxsize1)
 					Set(coord,currentbiome)
-					D.biomemap[coord.x][coord.y] = biomename
+					V.Data.biomemap[coord.x][coord.y] = biomename
 
 func GenerateAreas() -> void:
 	tiles = get_node(V.LAYERPATH + "World/Areas")
@@ -78,7 +81,7 @@ func GenerateAreas() -> void:
 	for x in maxsize/2:#generate towns
 		pos = randi()%maxsize
 		towns[x] = pos
-		D.areamap[x*2][pos] = "Town"
+		V.Data.areamap[x*2][pos] = "Town"
 		Set(Vector2i(x*2,pos),Vector2i(4,1))
 	for t in towns.size():#generate pathes between towns
 		selection = randi()%towns.size()
@@ -87,29 +90,29 @@ func GenerateAreas() -> void:
 		path = Vector2i((selection - t) * 2,towns[selection] - towns[t])
 		#check if there is already a nearby path
 		for c in 10:
-			if(D.areamap[sett][mini(town.x + c,maxsize -1)] == "Path"): path = Vector2i(0,c); break
-			if(D.areamap[sett][maxi(town.x - c,0)] == "Path"): path = Vector2i(0,-c); break
-			if(D.areamap[mini(sett + c,maxsize -1)][town.y] == "Path"): path = Vector2i(c,0); break
-			if(D.areamap[maxi(sett - c,0)][town.y] == "Path"): path = Vector2i(-c,0); break
+			if(V.Data.areamap[sett][mini(town.x + c,maxsize -1)] == "Path"): path = Vector2i(0,c); break
+			if(V.Data.areamap[sett][maxi(town.x - c,0)] == "Path"): path = Vector2i(0,-c); break
+			if(V.Data.areamap[mini(sett + c,maxsize -1)][town.y] == "Path"): path = Vector2i(c,0); break
+			if(V.Data.areamap[maxi(sett - c,0)][town.y] == "Path"): path = Vector2i(-c,0); break
 		for p in absi(path.y):#generate vetical path
 			num = (p + 1) * clampi(path.y,-1,1)
-			area = D.areamap[sett][town.x + num]
+			area = V.Data.areamap[sett][town.x + num]
 			if(area == "Path"):
 				Set(Vector2i(sett,town.x + num),Vector2i(2,1))
-				D.areamap[sett][town.x + num] = "Path"
+				V.Data.areamap[sett][town.x + num] = "Path"
 				break
 			elif(area == ""):
 				Set(Vector2i(sett,town.x + num),Vector2i(0,1))
-				D.areamap[sett][town.x + num] = "Path"
+				V.Data.areamap[sett][town.x + num] = "Path"
 			else: break
 		for p in absi(path.x):#generate horizontal path
 			num = p * clampi(path.x,-1,1)
-			area = D.areamap[sett + num][town.y]
+			area = V.Data.areamap[sett + num][town.y]
 			if(area == "Path"):
 				Set(Vector2i(sett + num,town.y),Vector2i(2,1))
-				D.areamap[sett + num][town.y] = "Path"
+				V.Data.areamap[sett + num][town.y] = "Path"
 				if(p != 0):break
 			elif(area == ""):
 				Set(Vector2i(sett + num,town.y),Vector2i(1,1))
-				D.areamap[sett + num][town.y] = "Path"
+				V.Data.areamap[sett + num][town.y] = "Path"
 			else: break

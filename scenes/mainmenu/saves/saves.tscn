@@ -5,6 +5,8 @@
 [node name="Saves" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+offset_right = 1408.0
+offset_bottom = 1080.0
 script = ExtResource("1_qlr5a")
 metadata/_edit_lock_ = true
 
@@ -14,10 +16,27 @@ offset_right = 256.0
 offset_bottom = 1080.0
 metadata/_edit_lock_ = true
 
+[node name="Load" type="Button" parent="SaveButtons"]
+layout_mode = 0
+offset_left = 1152.0
+offset_right = 1408.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 64
+text = "Load"
+metadata/_edit_lock_ = true
+
+[node name="Save" type="Button" parent="SaveButtons"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 64
+text = "Save"
+metadata/_edit_lock_ = true
+
 [node name="SaveData" type="Control" parent="."]
 anchors_preset = 0
 offset_left = 256.0
-offset_right = 1150.0
+offset_right = 1152.0
 offset_bottom = 1080.0
 metadata/_edit_lock_ = true
 
@@ -27,3 +46,6 @@ offset_left = 1152.0
 offset_right = 1408.0
 offset_bottom = 1080.0
 metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="SaveButtons/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="SaveButtons/Save" to="." method="_on_save_pressed"]
