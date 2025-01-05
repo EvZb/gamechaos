@@ -1,4 +1,4 @@
-class_name Item
+class_name BaseItem
 
 var Name:String = "Default Item"
 var Type:String = "Default"

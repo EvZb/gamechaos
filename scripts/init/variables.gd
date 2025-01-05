@@ -20,3 +20,7 @@ const TEXTURES:Dictionary = {
 	"Creature":null
 }
 var Data = SaveData.new()
+var IMats:PackedStringArray
+var IMat:Array[BaseMat]
+var ITypes:PackedStringArray
+var IType:Array[BaseType]
