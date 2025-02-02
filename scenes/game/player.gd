@@ -1,12 +1,8 @@
 extends Node2D
 
-var layers
 var direction:Vector2i
 var currentlayer:String = "World"
 var TIS = load("res://Assets/items/test_item.tscn")
-
-func _ready() -> void:
-	layers = %World/Layers
 
 func _physics_process(_delta) -> void:
 	V.Data.time.Pass()
@@ -17,15 +13,15 @@ func _physics_process(_delta) -> void:
 	direction = Vector2i()
 	if(Input.is_action_just_pressed("ui_text_submit")):
 		if(currentlayer == "World"):
-			layers.get_node("Area").show()
-			layers.get_node("World").hide()
+			%Area.show()
+			%World.hide()
 			currentlayer = "Area"
 		else:
-			layers.get_node("Area").hide()
-			layers.get_node("World").show()
+			%Area.hide()
+			%World.show()
 			currentlayer = "World"
 	if(Input.is_action_just_pressed("ui_select")):
 		var TI = TIS.instantiate()
-		layers.get_node("World").add_child(TI)
+		%World.add_child(TI)
 		TI.position = position
 		TI.show()

@@ -42,20 +42,20 @@ func MainMenu() -> void:
 		$/root/Main/MainMenu.show()
 		$/root/Main/Game/Player/Camera2D.enabled = false
 
-func AddItemType(name:String,interface:String,valuemod:int,size:int,sprite:String) -> void:
+func AddItemType(basename:String,interface:String,valuemod:int,size:int,sprite:String) -> void:
 	var type = BaseType.new()
 	type.Interface = interface
 	type.ValueMod = valuemod
 	type.Size = size
 	type.Sprite = sprite
-	V.ITypes.push_back(name)
+	V.ITypes.push_back(basename)
 	V.IType.push_back(type)
 
-func AddItemMat(name:String,mass:int,element:String,affinity:int,effects:PackedStringArray) -> void:
+func AddItemMat(basename:String,mass:int,element:String,affinity:int,effects:PackedStringArray) -> void:
 	var mat = BaseMat.new()
 	mat.Mass = mass
 	mat.Element = element
 	mat.Affinity = affinity
 	mat.Effects = effects
-	V.IMats.push_back(name)
+	V.IMats.push_back(basename)
 	V.IMat.push_back(mat)

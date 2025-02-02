@@ -1,26 +1,15 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://y7c7ry0affw8"]
 
-[ext_resource type="Texture2D" uid="uid://s2br7k4vliw0" path="res://Assets/sprites/tiles/world/temptiles.png" id="1_ptl0j"]
+[ext_resource type="Texture2D" uid="uid://b08r8tvmif1ky" path="res://Assets/sprites/tiles/world/worldtiles.png" id="1_ayril"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nhhtb"]
-texture = ExtResource("1_ptl0j")
+texture = ExtResource("1_ayril")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-5:1/0 = 0
-4:1/0 = 0
-3:1/0 = 0
-2:1/0 = 0
-1:1/0 = 0
 0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+0:4/0 = 0
 
 [resource]
 tile_size = Vector2i(128, 128)
