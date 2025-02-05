@@ -1,3 +1,4 @@
+class_name ServerData
 #class_name ServerData
 #
 #var Users:Dictionary = {"Default":""}#UserName:Password

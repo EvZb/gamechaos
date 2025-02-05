@@ -5,7 +5,7 @@ var currentlayer:String = "World"
 var TIS = load("res://Assets/items/test_item.tscn")
 
 func _physics_process(_delta) -> void:
-	V.Data.time.Pass()
+	D.game.time.Pass()
 	if(Input.is_action_pressed("direction")):
 		direction = Vector2i(Input.get_axis("ui_left","ui_right"),Input.get_axis("ui_up","ui_down"))
 	position.y = clamp(position.y + (direction.y * 128),64,16320)

@@ -22,6 +22,7 @@ boot_splash/use_filter=false
 V="*res://scripts/init/variables.gd"
 F="*res://scripts/init/functions.gd"
 S="*res://scripts/init/settings.gd"
+D="*res://scripts/init/data.gd"
 LoadScript="res://scripts/init/loadscript.gd"
 
 [debug]

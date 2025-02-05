@@ -1,7 +1,7 @@
 extends Node
 
 func SetTile(layer:String,coord:Vector2i,tile:int) -> void:
-	get_node(V.LAYERPATH+layer).set_cell(coord,0,Vector2i(tile,0))
+	get_node(V.AREAPATH+layer).set_cell(coord,0,Vector2i(tile,0))
 
 func Log(message:String,newentry:bool=true) -> void:
 	if(newentry):
@@ -13,19 +13,19 @@ func Log(message:String,newentry:bool=true) -> void:
 func SaveWorld(worldname:String,savenum:int) -> void:
 	var scene = PackedScene.new()
 	scene.pack($/root/Main/Game)
-	V.Data.scene = scene
+	D.game.scene = scene
 	if(!DirAccess.dir_exists_absolute("user://saves/worlds/"+worldname)):
 		DirAccess.make_dir_absolute("user://saves/worlds/"+worldname)
 	var file = ConfigFile.new()
-	file.set_value("Data","WorldData",V.Data)
+	file.set_value("Data","WorldData",D.game)
 	file.save("user://saves/worlds/"+worldname+"/"+str(savenum)+".ini")
 
 func LoadWorld(worldname:String,savenum:int):
 	var file = ConfigFile.new()
 	var check = file.load("user://saves/worlds/"+worldname+"/"+str(savenum)+".ini")
-	if check == OK: V.Data = file.get_value("Data","WorldData")
+	if check == OK: D.game = file.get_value("Data","WorldData")
 	$/root/Main/Game.free()
-	$/root/Main.add_child(V.Data.scene.instantiate())
+	$/root/Main.add_child(D.game.scene.instantiate())
 	$/root/Main.move_child($/root/Main/Game,0)
 	F.MainMenu()
 
@@ -59,3 +59,5 @@ func AddItemMat(basename:String,mass:int,element:String,affinity:int,effects:Pac
 	mat.Effects = effects
 	V.IMats.push_back(basename)
 	V.IMat.push_back(mat)
+
+func Move(entity:int,area:int) -> void:pass
