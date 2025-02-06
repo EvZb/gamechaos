@@ -3,10 +3,10 @@ extends Node
 func _input(_event) -> void:
 	if(Input.is_action_just_pressed("ui_cancel")):
 		F.MainMenu()
-	
+	if(Input.is_action_just_pressed("console")):
+		get_node("/root/Main/Console").Toggle()
 
 func _init() -> void:
-	V.SYSTEMLOG.resize(100)
 	if(!DirAccess.dir_exists_absolute("user://settings")):
 		DirAccess.make_dir_absolute("user://settings")
 	if(!DirAccess.dir_exists_absolute("user://saves")):

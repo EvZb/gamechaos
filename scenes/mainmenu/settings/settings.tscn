@@ -128,7 +128,6 @@ text = "Apply Game"
 metadata/_edit_lock_ = true
 
 [node name="Controls" type="Control" parent="Options"]
-visible = false
 anchors_preset = 0
 script = ExtResource("3_xx4gu")
 metadata/_edit_lock_ = true
@@ -141,6 +140,42 @@ offset_right = 1216.0
 offset_bottom = 952.0
 theme_override_font_sizes/font_size = 64
 text = "Apply Controls"
+metadata/_edit_lock_ = true
+
+[node name="console" type="Label" parent="Options/Controls"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 128.0
+offset_right = 320.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 32
+text = "Console: F1"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="areaview" type="Label" parent="Options/Controls"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 320.0
+offset_bottom = 256.0
+theme_override_font_sizes/font_size = 32
+text = "Area View: Enter"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="spawnitem" type="Label" parent="Options/Controls"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 320.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 32
+text = "Item: Space"
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="Graphics" type="Control" parent="Options"]

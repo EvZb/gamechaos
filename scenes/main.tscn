@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dttxi4rgauogy"]
+[gd_scene load_steps=6 format=3 uid="uid://dttxi4rgauogy"]
 
 [ext_resource type="PackedScene" uid="uid://d2jihnloqithr" path="res://scenes/game/game.tscn" id="1_qaqwc"]
 [ext_resource type="PackedScene" uid="uid://d38b77fongsw8" path="res://scenes/mainmenu/main_menu.tscn" id="2_6l4pn"]
 [ext_resource type="PackedScene" uid="uid://c31uqenbe0hdk" path="res://scenes/startmenu/startmenu.tscn" id="2_80es0"]
 [ext_resource type="PackedScene" uid="uid://c7oy1x0h1bho4" path="res://scenes/multiplayer/multiplayer.tscn" id="3_gtgd6"]
+[ext_resource type="Script" path="res://scenes/console.gd" id="5_eymli"]
 
 [node name="Main" type="Node"]
 
@@ -15,3 +16,36 @@ visible = false
 [node name="Multiplayer" parent="." instance=ExtResource("3_gtgd6")]
 
 [node name="MainMenu" parent="." instance=ExtResource("2_6l4pn")]
+
+[node name="Console" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 512.0
+script = ExtResource("5_eymli")
+metadata/_edit_lock_ = true
+
+[node name="Log" type="VBoxContainer" parent="Console"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 256.0
+alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="Line" type="Label" parent="Console/Log"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "There are no commands yet."
+justification_flags = 0
+metadata/_edit_lock_ = true
+
+[node name="LineEdit" type="LineEdit" parent="Console"]
+layout_mode = 0
+offset_top = 256.0
+offset_right = 1920.0
+offset_bottom = 320.0
+theme_override_font_sizes/font_size = 32
+metadata/_edit_lock_ = true
+
+[connection signal="text_submitted" from="Console/LineEdit" to="Console" method="_on_line_edit_text_submitted"]

@@ -3,8 +3,6 @@ extends Node
 var MAIN_MENU_OPEN:int = true
 var MULTIPLAYER:bool = true
 var GAMERUNNING:bool = false
-var SYSTEMLOG:PackedStringArray
-var LOGINDEX:int = 0
 const BIOMETILES:Array[Vector2i] = [Vector2i(0,0),Vector2i(0,1),Vector2i(0,2),Vector2i(0,3),Vector2i(0,4)]
 const BIOMENAMES:PackedStringArray = ["Forest","Mountains","Plains","Desert","Snow"]
 const AREAPATH:String = "/root/Main/Game/Area/"
