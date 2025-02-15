@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://brp2plpbnjtdm"]
+
+[ext_resource type="Script" path="res://scenes/console.gd" id="1_rxdgl"]
+
+[node name="Console" type="CanvasLayer"]
+script = ExtResource("1_rxdgl")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 310.0
+color = Color(0.25098, 0.25098, 0.25098, 0.25098)
+metadata/_edit_lock_ = true
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+offset_right = 1920.0
+offset_bottom = 246.0
+scroll_vertical_custom_step = 50.0
+horizontal_scroll_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Log" type="VBoxContainer" parent="Scroll"]
+custom_minimum_size = Vector2(1912, 246)
+layout_mode = 2
+alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="Line" type="Label" parent="Scroll/Log"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "Type 'help #' for a list of commands. Type the name of a command without arguments for its description."
+justification_flags = 0
+metadata/_edit_lock_ = true
+
+[node name="Input" type="LineEdit" parent="."]
+offset_top = 246.0
+offset_right = 1920.0
+offset_bottom = 310.0
+theme_override_font_sizes/font_size = 32
+metadata/_edit_lock_ = true
+
+[connection signal="text_submitted" from="Input" to="." method="_on_line_edit_text_submitted"]

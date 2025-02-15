@@ -34,6 +34,8 @@ func MainMenu() -> void:
 		V.MAIN_MENU_OPEN = true
 		$/root/Main/MainMenu.show()
 		$/root/Main/Game/Player/Camera2D.enabled = false
+	$/root/Main/Console.hide()
+	$/root/Main/Console.shown = false
 
 func AddItemType(basename:String,interface:String,valuemod:int,size:int,sprite:String) -> void:
 	var type = BaseType.new()
