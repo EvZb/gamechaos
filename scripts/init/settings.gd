@@ -37,19 +37,14 @@ var Graphics = {
 	}
 
 var Other = {
-	"SystemLog": false,
+	"Default": true,
 	}
 
 var Worldgen = {
 	"Size": 128,
 	}
 
-var Servers = {
-	"Default": {
-		"IP": "127.0.0.1",
-		"Port": 33322,
-		"Character": {
-			"Default": ""
-		},
-	},
+var Multiplayer = {
+	"DefaultIP": "127.0.0.1",
+	"DefaultPort": 27772 
 }

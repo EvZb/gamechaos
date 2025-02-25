@@ -10,22 +10,20 @@ offset_bottom = 1080.0
 script = ExtResource("1_qlr5a")
 metadata/_edit_lock_ = true
 
-[node name="SaveButtons" type="Control" parent="."]
+[node name="Saves" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 1408.0
+offset_bottom = 1080.0
+metadata/_edit_lock_ = true
+
+[node name="SaveButtons" type="Control" parent="Saves"]
 anchors_preset = 0
 offset_right = 256.0
 offset_bottom = 1080.0
 metadata/_edit_lock_ = true
 
-[node name="Load" type="Button" parent="SaveButtons"]
-layout_mode = 0
-offset_left = 1152.0
-offset_right = 1408.0
-offset_bottom = 128.0
-theme_override_font_sizes/font_size = 64
-text = "Load"
-metadata/_edit_lock_ = true
-
-[node name="Save" type="Button" parent="SaveButtons"]
+[node name="Save" type="Button" parent="Saves/SaveButtons"]
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 128.0
@@ -33,19 +31,54 @@ theme_override_font_sizes/font_size = 64
 text = "Save"
 metadata/_edit_lock_ = true
 
-[node name="SaveData" type="Control" parent="."]
+[node name="SaveData" type="Control" parent="Saves"]
 anchors_preset = 0
 offset_left = 256.0
 offset_right = 1152.0
 offset_bottom = 1080.0
 metadata/_edit_lock_ = true
 
-[node name="LoadButtons" type="Control" parent="."]
+[node name="LoadButtons" type="Control" parent="Saves"]
 anchors_preset = 0
 offset_left = 1152.0
 offset_right = 1408.0
 offset_bottom = 1080.0
 metadata/_edit_lock_ = true
 
-[connection signal="pressed" from="SaveButtons/Load" to="." method="_on_load_pressed"]
-[connection signal="pressed" from="SaveButtons/Save" to="." method="_on_save_pressed"]
+[node name="Load" type="Button" parent="Saves/LoadButtons"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 64
+text = "Load"
+metadata/_edit_lock_ = true
+
+[node name="Worlds" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1408.0
+offset_bottom = 1080.0
+metadata/_edit_lock_ = true
+
+[node name="SelectButtons" type="Control" parent="Worlds"]
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 1080.0
+metadata/_edit_lock_ = true
+
+[node name="Select" type="Button" parent="Worlds/SelectButtons"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 64
+text = "Select"
+metadata/_edit_lock_ = true
+
+[node name="Description" type="Control" parent="Worlds"]
+anchors_preset = 0
+offset_left = 256.0
+offset_right = 1408.0
+offset_bottom = 1080.0
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Saves/SaveButtons/Save" to="." method="_on_save_pressed" binds= [0]]
+[connection signal="pressed" from="Saves/LoadButtons/Load" to="." method="_on_load_pressed" binds= [0]]

@@ -1,4 +1,4 @@
-extends Control
+extends Node
 
 var biome:Array[Vector2i] = []
 var biomeshuffle:Array[Vector2i] = []
@@ -11,13 +11,22 @@ func Set(coord:Vector2i,tile:Vector2i) -> void:
 	tiles.set_cell(coord,0,tile)
 
 func Generate() -> void:
-	$/root/Main/Game.free()
 	$/root/Main.add_child(load("res://scenes/game/game.tscn").instantiate())
 	$/root/Main.move_child($/root/Main/Game,0)
+	D.game = GameData.new()
+	D.server = ServerData.new()
 	GenerateBiomes()
 	GenerateAreas()
+	$/root/Main/MainMenu/Options/Start.hide()
+	$/root/Main/MainMenu/Options/Leave.show()
+	$/root/Main/Multiplayer/Menu/Config/Info.hide()
+	$/root/Main/Multiplayer/Menu/Config/Create.show()
+	$/root/Main/Game.add_child(load("res://scenes/game/player.tscn").instantiate())
+	$/root/Main/Game.process_mode = Node.PROCESS_MODE_INHERIT
+	$/root/Main/Game.pause(false)
 
 func GenerateBiomes() -> void:
+	D.game.world.Size = maxsize
 	tiles = get_node(V.WORLDPATH + "Biomes")
 	var maxsize1:int = maxsize - 1
 	D.game.biomemap.clear()
@@ -26,7 +35,7 @@ func GenerateBiomes() -> void:
 	arrr.resize(maxsize)
 	D.game.biomemap.fill(arrr)
 	D.game.areamap = D.game.biomemap.duplicate(true)
-	var unit:int = maxsize / sqrt(biomecount)
+	var unit:int = maxsize / (sqrt(biomecount))
 	var biomeloc:Vector2i
 	var biomewidth:int
 	var currentbiome:Vector2i

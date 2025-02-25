@@ -6,15 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://b43thgki73oje" path="res://scenes/mainmenu/saves/saves.tscn" id="3_goahg"]
 [ext_resource type="PackedScene" uid="uid://c7p5pawlfyu5l" path="res://scenes/mainmenu/start/start.tscn" id="4_iy4ef"]
 
-[node name="MainMenu" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+[node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_ubo7q")
 metadata/_edit_lock_ = true
 
 [node name="SubMenu" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_left = 512.0
 offset_right = 1920.0
@@ -42,6 +39,7 @@ visible = false
 visible = false
 
 [node name="Options" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 512.0
 offset_bottom = 1080.0
@@ -81,8 +79,27 @@ theme_override_font_sizes/font_size = 32
 text = "New Game"
 metadata/_edit_lock_ = true
 
-[node name="Multiplayer" type="Button" parent="Options"]
+[node name="Leave" type="Button" parent="Options"]
 visible = false
+layout_mode = 0
+offset_top = 634.0
+offset_right = 512.0
+offset_bottom = 730.0
+theme_override_font_sizes/font_size = 32
+text = "Leave Game"
+metadata/_edit_lock_ = true
+
+[node name="Disconnect" type="Button" parent="Options"]
+visible = false
+layout_mode = 0
+offset_top = 634.0
+offset_right = 512.0
+offset_bottom = 730.0
+theme_override_font_sizes/font_size = 32
+text = "Disconnect"
+metadata/_edit_lock_ = true
+
+[node name="Multiplayer" type="Button" parent="Options"]
 layout_mode = 0
 offset_top = 752.0
 offset_right = 512.0
@@ -112,6 +129,8 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="Options/Icon" to="." method="_on_icon_pressed"]
 [connection signal="pressed" from="Options/Saves" to="." method="_on_saves_pressed"]
 [connection signal="pressed" from="Options/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Options/Leave" to="." method="_on_leave_pressed"]
+[connection signal="pressed" from="Options/Disconnect" to="." method="_on_disconnect_pressed"]
 [connection signal="pressed" from="Options/Multiplayer" to="." method="_on_multiplayer_pressed"]
 [connection signal="pressed" from="Options/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Options/Exit" to="." method="_on_exit_pressed"]

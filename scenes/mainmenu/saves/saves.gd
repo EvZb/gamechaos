@@ -1,10 +1,20 @@
 extends Control
 #Time.get_datetime_string_from_system()
 
+func _on_save_pressed(num:int) -> void:
+	F.SaveWorld("test",num)
 
-func _on_save_pressed() -> void:
-	F.SaveWorld("test",0)
+func _on_load_pressed(num:int) -> void:
+	F.LoadWorld("test",num)
 
-
-func _on_load_pressed() -> void:
-	F.LoadWorld("test",0)
+func LoadMenu() -> void:
+	if(V.MULTIPLAYER): $Saves/LoadButtons.hide()
+	else: $Saves/LoadButtons.show()
+	if(V.GAMERUNNING):
+		$Saves/SaveButtons.show()
+		$Saves.show()
+		$Worlds.hide()
+	else:
+		$Saves/SaveButtons.hide()
+		$Worlds.show()
+		$Saves.hide()

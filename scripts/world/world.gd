@@ -1,7 +1,7 @@
+extends Node
 class_name World
 
-var Areas:Array[Area] = []
-var Layers:Array[AreaLayer] = []
+var Size:int
+var Areas:Array[Area] = [Area.new()]
+var Layers:Array[AreaLayer] = [AreaLayer.new()]
 var Inventories:Array[Inventory] = []
-var Characters = []
-var Players = []

@@ -1,76 +1,146 @@
-[gd_scene load_steps=6 format=3 uid="uid://c31uqenbe0hdk"]
+[gd_scene load_steps=5 format=3 uid="uid://c31uqenbe0hdk"]
 
 [ext_resource type="Script" path="res://scenes/startmenu/startmenu.gd" id="1_ichsk"]
-[ext_resource type="Script" path="res://scenes/startmenu/menus/main.gd" id="2_kjdr5"]
-[ext_resource type="Script" path="res://scenes/startmenu/players.gd" id="3_jbhuy"]
+[ext_resource type="Script" path="res://scenes/startmenu/character.gd" id="3_jbhuy"]
 [ext_resource type="Script" path="res://scenes/startmenu/world.gd" id="5_a33vh"]
 [ext_resource type="Script" path="res://scenes/startmenu/generate.gd" id="6_c26v5"]
 
-[node name="StartMenu" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+[node name="StartMenu" type="CanvasLayer"]
 script = ExtResource("1_ichsk")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="ColorRect" parent="."]
-layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-mouse_filter = 2
 color = Color(0.133333, 0.333333, 0.333333, 1)
 metadata/_edit_lock_ = true
 
-[node name="Generate" type="Control" parent="."]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Generate" type="Node" parent="."]
 script = ExtResource("6_c26v5")
 metadata/_edit_lock_ = true
 
 [node name="Menus" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 metadata/_edit_lock_ = true
 
-[node name="Main" type="Control" parent="Menus"]
+[node name="Character" type="Control" parent="Menus"]
 anchors_preset = 0
-script = ExtResource("2_kjdr5")
+script = ExtResource("3_jbhuy")
 metadata/_edit_lock_ = true
 
-[node name="Start" type="Button" parent="Menus/Main"]
+[node name="Name" type="LineEdit" parent="Menus/Character"]
+layout_mode = 0
+offset_left = 256.0
+offset_right = 640.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 32
+placeholder_text = "???"
+max_length = 24
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Menus/Character/Name"]
+layout_mode = 0
+offset_left = -256.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 32
+text = "Name:"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Age" type="LineEdit" parent="Menus/Character"]
+layout_mode = 0
+offset_left = 768.0
+offset_right = 896.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 32
+placeholder_text = "???"
+max_length = 4
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Menus/Character/Age"]
+layout_mode = 0
+offset_left = -128.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 32
+text = "Age:"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Height" type="LineEdit" parent="Menus/Character"]
+layout_mode = 0
+offset_left = 1020.0
+offset_right = 1148.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 32
+placeholder_text = "???"
+max_length = 4
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Menus/Character/Height"]
+layout_mode = 0
+offset_left = -128.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 32
+text = "Height:"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Weight" type="LineEdit" parent="Menus/Character"]
+layout_mode = 0
+offset_left = 1276.0
+offset_right = 1404.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 32
+placeholder_text = "???"
+max_length = 4
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Menus/Character/Weight"]
+layout_mode = 0
+offset_left = -128.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 32
+text = "Weight:"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Alias" type="LineEdit" parent="Menus/Character"]
+visible = false
+layout_mode = 0
+offset_left = 256.0
+offset_top = 128.0
+offset_right = 640.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 32
+placeholder_text = "???"
+max_length = 24
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Menus/Character/Alias"]
+layout_mode = 0
+offset_left = -256.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 32
+text = "Alias:"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Finish" type="Button" parent="Menus/Character"]
 layout_mode = 0
 offset_top = 952.0
 offset_right = 384.0
 offset_bottom = 1080.0
 theme_override_font_sizes/font_size = 64
-text = "Start"
-metadata/_edit_lock_ = true
-
-[node name="World" type="Button" parent="Menus/Main"]
-layout_mode = 0
-offset_right = 384.0
-offset_bottom = 128.0
-theme_override_font_sizes/font_size = 64
 text = "Finish"
-metadata/_edit_lock_ = true
-
-[node name="Player" type="Button" parent="Menus/Main"]
-layout_mode = 0
-offset_top = 256.0
-offset_right = 384.0
-offset_bottom = 384.0
-theme_override_font_sizes/font_size = 64
-text = "Character"
-metadata/_edit_lock_ = true
-
-[node name="Character" type="Control" parent="Menus"]
-visible = false
-anchors_preset = 0
-script = ExtResource("3_jbhuy")
 metadata/_edit_lock_ = true
 
 [node name="World" type="Control" parent="Menus"]
@@ -79,4 +149,41 @@ anchors_preset = 0
 script = ExtResource("5_a33vh")
 metadata/_edit_lock_ = true
 
-[connection signal="pressed" from="Menus/Main/Start" to="Menus/Main" method="_on_start_pressed"]
+[node name="Finish" type="Button" parent="Menus/World"]
+layout_mode = 0
+offset_top = 952.0
+offset_right = 384.0
+offset_bottom = 1080.0
+theme_override_font_sizes/font_size = 64
+text = "Finish"
+metadata/_edit_lock_ = true
+
+[node name="WSize" type="HSlider" parent="Menus/World"]
+custom_minimum_size = Vector2(256, 32)
+layout_mode = 0
+offset_right = 384.0
+offset_bottom = 32.0
+min_value = 32.0
+max_value = 128.0
+step = 16.0
+value = 32.0
+scrollable = false
+tick_count = 7
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Menus/World/WSize"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 384.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 32
+text = "World Size"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[connection signal="text_changed" from="Menus/Character/Age" to="Menus/Character" method="_on_number_box_input" binds= ["Age"]]
+[connection signal="text_changed" from="Menus/Character/Height" to="Menus/Character" method="_on_number_box_input" binds= ["Height"]]
+[connection signal="text_changed" from="Menus/Character/Weight" to="Menus/Character" method="_on_number_box_input" binds= ["Weight"]]
+[connection signal="pressed" from="Menus/Character/Finish" to="Menus/Character" method="_on_finish_pressed"]
+[connection signal="pressed" from="Menus/World/Finish" to="Menus/World" method="_on_finish_pressed"]
+[connection signal="drag_ended" from="Menus/World/WSize" to="Menus/World" method="_on_wsize_changed"]

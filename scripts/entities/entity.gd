@@ -1,5 +1,7 @@
 class_name Entity
 
+var Name:String = "Default"
+var InventoryId:int 
 var Position:Vector2i
 var Type:String = "Default"#(Animal, Citizen, Companion, Monster, Person, Player)
 var HostileTypes:PackedStringArray
@@ -20,6 +22,7 @@ var Stat:Dictionary = {
 var Growth:Dictionary = {
 	"Level":0
 }
+var Relations:Dictionary
 var Movement:int = 1#walk speed in tiles per (game) minute
 var Speed:int = 1#attack speed
 var Intelligence:int = 1

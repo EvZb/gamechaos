@@ -1,10 +1,5 @@
-extends Control
+extends CanvasLayer
 
-func reload() -> void:
-	hide_menus()
-	$Menus/Main.show()
-
-func hide_menus() -> void:
-	$Menus/Main.hide()
-	$Menus/Character.hide()
-	$Menus/World.hide()
+func _ready() -> void:
+	%Menus/Character.hide()
+	%Menus/World.show()

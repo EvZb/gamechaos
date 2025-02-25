@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dba6o44iowqex"]
+
+[ext_resource type="Texture2D" uid="uid://ck7xeh1bkuc5v" path="res://Assets/sprites/creatures/human.png" id="1_yvult"]
+[ext_resource type="Script" path="res://scenes/game/player.gd" id="2_dbid7"]
+
+[node name="Player" type="Sprite2D"]
+texture = ExtResource("1_yvult")
+offset = Vector2(64, 64)
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 128)
+script = ExtResource("2_dbid7")
+metadata/_edit_lock_ = true
+
+[node name="Time" type="Label" parent="."]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 87.0
+offset_bottom = -41.0
+
+[node name="Camera" type="Camera2D" parent="."]
+texture_filter = 1
+limit_left = 0
+limit_top = 0
+limit_right = 16384
+limit_bottom = 16384
+metadata/_edit_lock_ = true

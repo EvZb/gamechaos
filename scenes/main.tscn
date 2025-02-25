@@ -12,13 +12,11 @@
 
 [node name="StartMenu" parent="." instance=ExtResource("2_80es0")]
 visible = false
-texture_filter = 2
-
-[node name="Multiplayer" parent="." instance=ExtResource("3_gtgd6")]
-texture_filter = 2
 
 [node name="MainMenu" parent="." instance=ExtResource("2_6l4pn")]
-texture_filter = 2
 
 [node name="Console" parent="." instance=ExtResource("5_dc10k")]
+layer = 2
 visible = false
+
+[node name="Multiplayer" parent="." instance=ExtResource("3_gtgd6")]

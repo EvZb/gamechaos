@@ -212,7 +212,7 @@ alignment = 1
 icon_alignment = 1
 expand_icon = true
 selected = 0
-item_count = 7
+item_count = 9
 popup/item_0/text = "854x480"
 popup/item_1/text = "960x540"
 popup/item_1/id = 1
@@ -226,6 +226,10 @@ popup/item_5/text = "1600x900"
 popup/item_5/id = 5
 popup/item_6/text = "1920x1080"
 popup/item_6/id = 6
+popup/item_7/text = "2560x1440"
+popup/item_7/id = 7
+popup/item_8/text = "3840x2160"
+popup/item_8/id = 8
 metadata/_edit_lock_ = true
 
 [node name="Apply" type="Button" parent="Options/Graphics"]
@@ -244,23 +248,6 @@ anchors_preset = 0
 script = ExtResource("5_sgget")
 metadata/_edit_lock_ = true
 
-[node name="SystemLog" type="OptionButton" parent="Options/Other"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 64.0
-offset_right = 320.0
-offset_bottom = 128.0
-theme_override_font_sizes/font_size = 32
-alignment = 1
-icon_alignment = 1
-expand_icon = true
-selected = 0
-item_count = 2
-popup/item_0/text = "Sytem Log Off"
-popup/item_1/text = "System Log On"
-popup/item_1/id = 1
-metadata/_edit_lock_ = true
-
 [node name="Apply" type="Button" parent="Options/Other"]
 layout_mode = 0
 offset_left = 704.0
@@ -277,3 +264,4 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="MenuButton/Other" to="." method="_on_other_pressed"]
 [connection signal="pressed" from="Options/Game/Apply" to="Options/Game" method="_on_apply_pressed"]
 [connection signal="pressed" from="Options/Graphics/Apply" to="Options/Graphics" method="_on_apply_pressed"]
+[connection signal="pressed" from="Options/Other/Apply" to="Options/Other" method="_on_apply_pressed"]

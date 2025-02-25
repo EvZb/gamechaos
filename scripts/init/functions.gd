@@ -12,6 +12,7 @@ func SaveWorld(worldname:String,savenum:int) -> void:
 	var file = ConfigFile.new()
 	file.set_value("Data","WorldData",D.game)
 	file.save("user://saves/worlds/"+worldname+"/"+str(savenum)+".ini")
+	D.game.scene = PackedScene.new()
 
 func LoadWorld(worldname:String,savenum:int):
 	var file = ConfigFile.new()
@@ -23,17 +24,17 @@ func LoadWorld(worldname:String,savenum:int):
 	F.MainMenu()
 
 func MainMenu() -> void:
-	if(V.MAIN_MENU_OPEN):
+	if(V.MAIN_MENU_OPEN and V.GAMERUNNING):
 		V.MAIN_MENU_OPEN = false
 		$/root/Main/MainMenu.hide()
 		$/root/Main/MainMenu.hide_menus()
-		$/root/Main/Game/Player/Camera2D.enabled = true
-		$/root/Main/Game.pause(false)
-	else:
-		$/root/Main/Game.pause(true)
+		if(!V.MULTIPLAYER): $/root/Main/Game.pause(false)
+		$/root/Main/Game/Player.set_physics_process(true)
+	elif(V.MAIN_MENU_OPEN == false):
+		$/root/Main/Game/Player.set_physics_process(false)
+		if(!V.MULTIPLAYER): $/root/Main/Game.pause(true)
 		V.MAIN_MENU_OPEN = true
 		$/root/Main/MainMenu.show()
-		$/root/Main/Game/Player/Camera2D.enabled = false
 	$/root/Main/Console.hide()
 	$/root/Main/Console.shown = false
 
@@ -46,13 +47,21 @@ func AddItemType(basename:String,interface:String,valuemod:int,size:int,sprite:S
 	V.ITypes.push_back(basename)
 	V.IType.push_back(type)
 
-func AddItemMat(basename:String,mass:int,element:String,affinity:int,effects:PackedStringArray) -> void:
+func AddItemMat(basename:String,mass:int,element:String,affinity:int,value:int,effects:PackedStringArray) -> void:
 	var mat = BaseMat.new()
 	mat.Mass = mass
 	mat.Element = element
 	mat.Affinity = affinity
+	mat.Value = value
 	mat.Effects = effects
 	V.IMats.push_back(basename)
 	V.IMat.push_back(mat)
 
-func Move(entity:int,area:int) -> void:pass
+#func Spawn(area:int, layer:int, x:int, y:int) -> void:pass
+
+#func Move(area:int,layer:int,ent:int,dir:Vector2i) -> void:
+	#var pos = D.game.world.Layers[D.game.world.Areas[area].Layers[layer]].move(ent,dir)
+	#if($/root/Main/Game.arealoaded == area and $/root/Main/Game.layerloaded == layer):
+		#var ment = $/root/Main/Game/Area.get_child(4 + ent)
+		#ment.position.x = pos.x * 128
+		#ment.position.y = pos.y * 128

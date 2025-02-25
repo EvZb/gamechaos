@@ -1,27 +1,26 @@
-extends Node2D
+extends Sprite2D
 
-var direction:Vector2i
-var currentlayer:String = "World"
-var TIS = load("res://Assets/items/test_item.tscn")
+#var TIS = load("res://scenes/game/player.tscn")
+var area = 0
+var layer = 0
+var tmp
 
 func _physics_process(_delta) -> void:
-	D.game.time.Pass()
 	if(Input.is_action_pressed("direction")):
-		direction = Vector2i(Input.get_axis("ui_left","ui_right"),Input.get_axis("ui_up","ui_down"))
-	position.y = clamp(position.y + (direction.y * 128),64,16320)
-	position.x = clamp(position.x + (direction.x * 128),64,16320)
-	direction = Vector2i()
-	if(Input.is_action_just_pressed("ui_text_submit")):
-		if(currentlayer == "World"):
-			%Area.show()
-			%World.hide()
-			currentlayer = "Area"
-		else:
-			%Area.hide()
-			%World.show()
-			currentlayer = "World"
-	if(Input.is_action_just_pressed("ui_select")):
-		var TI = TIS.instantiate()
-		%World.add_child(TI)
-		TI.position = position
-		TI.show()
+		position += Vector2(Input.get_axis("ui_left","ui_right") * 128, Input.get_axis("ui_up","ui_down") * 128)
+	#if(Input.is_action_just_pressed("ui_text_submit")):
+	#	if(%World.visible):
+	#		%Area.show()
+	#		%World.hide()
+	#	else:
+	#		%Area.hide()
+	#		%World.show()
+	#if(Input.is_action_just_pressed("ui_select")):
+	#	var TI = TIS.instantiate()
+	#	get_parent().add_child(TI)
+	#	TI.position = Vector2(128,128)
+	#	TI.show()
+	#if(%World.hidden):F.Move(area,layer,0,direction)
+	#else:
+	#	position = Vector2(position.x + direction.x * 128,position.y + direction.y * 128).clampf(0,D.game.world.Size - 1)
+	#	area += direction.x + (direction.y * 128)
