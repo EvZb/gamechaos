@@ -33,3 +33,4 @@ func _on_finish_pressed() -> void:
 	hide()
 	$/root/Main/StartMenu.hide()
 	%Menus/World.show()
+	$/root/Main/Game.pause(false)

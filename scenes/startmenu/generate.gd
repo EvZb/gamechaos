@@ -23,7 +23,6 @@ func Generate() -> void:
 	$/root/Main/Multiplayer/Menu/Config/Create.show()
 	$/root/Main/Game.add_child(load("res://scenes/game/player.tscn").instantiate())
 	$/root/Main/Game.process_mode = Node.PROCESS_MODE_INHERIT
-	$/root/Main/Game.pause(false)
 
 func GenerateBiomes() -> void:
 	D.game.world.Size = maxsize

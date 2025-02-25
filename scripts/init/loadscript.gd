@@ -18,5 +18,3 @@ func _init() -> void:
 	S.Load("Graphics")
 	S.Load("Other")
 	S.Apply()
-
-func _ready() -> void: V.GAMERUNNING = false

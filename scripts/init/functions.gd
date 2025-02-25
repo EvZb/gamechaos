@@ -56,12 +56,3 @@ func AddItemMat(basename:String,mass:int,element:String,affinity:int,value:int,e
 	mat.Effects = effects
 	V.IMats.push_back(basename)
 	V.IMat.push_back(mat)
-
-#func Spawn(area:int, layer:int, x:int, y:int) -> void:pass
-
-#func Move(area:int,layer:int,ent:int,dir:Vector2i) -> void:
-	#var pos = D.game.world.Layers[D.game.world.Areas[area].Layers[layer]].move(ent,dir)
-	#if($/root/Main/Game.arealoaded == area and $/root/Main/Game.layerloaded == layer):
-		#var ment = $/root/Main/Game/Area.get_child(4 + ent)
-		#ment.position.x = pos.x * 128
-		#ment.position.y = pos.y * 128

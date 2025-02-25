@@ -21,8 +21,11 @@ func _init() -> void:
 
 func _physics_process(_delta) -> void:
 	D.game.time.Pass()
-	#%Player/Time.text = str(D.game.time.Times())
 
 func spawn_player() -> void:
 	var player = load("res://scenes/game/player.tscn")
 	add_child(player.instantiate())
+
+func spawn_item() -> void:pass
+
+func spawn_entity() -> void:pass
