@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://behqf8hyrcb34"
-path="res://.godot/imported/Cloth.png-4648ba4d1a2699ebc2856c5da4fea314.ctex"
+path="res://.godot/imported/Cloth.png-25d4a7df08388dd633200cdfd0827664.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/items/Material/Cloth.png"
-dest_files=["res://.godot/imported/Cloth.png-4648ba4d1a2699ebc2856c5da4fea314.ctex"]
+source_file="res://assets/sprites/items/Material/Cloth.png"
+dest_files=["res://.godot/imported/Cloth.png-25d4a7df08388dd633200cdfd0827664.ctex"]
 
 [params]
 

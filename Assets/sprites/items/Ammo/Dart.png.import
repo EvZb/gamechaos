@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://x5v25e4kjbkx"
-path="res://.godot/imported/Dart.png-f230c6b65adf25b54527b890fbc6dbb7.ctex"
+path="res://.godot/imported/Dart.png-43d46afe854bc1ee2c7ebc649ad8edbe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/items/Ammo/Dart.png"
-dest_files=["res://.godot/imported/Dart.png-f230c6b65adf25b54527b890fbc6dbb7.ctex"]
+source_file="res://assets/sprites/items/Ammo/Dart.png"
+dest_files=["res://.godot/imported/Dart.png-43d46afe854bc1ee2c7ebc649ad8edbe.ctex"]
 
 [params]
 

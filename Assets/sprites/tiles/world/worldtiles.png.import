@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b08r8tvmif1ky"
-path="res://.godot/imported/worldtiles.png-ea1b25ef4eaad1ee08ea07db881221f3.ctex"
+path="res://.godot/imported/worldtiles.png-0dc23ca3164324b8d53fe6efa454e0a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/tiles/world/worldtiles.png"
-dest_files=["res://.godot/imported/worldtiles.png-ea1b25ef4eaad1ee08ea07db881221f3.ctex"]
+source_file="res://assets/sprites/tiles/world/worldtiles.png"
+dest_files=["res://.godot/imported/worldtiles.png-0dc23ca3164324b8d53fe6efa454e0a4.ctex"]
 
 [params]
 

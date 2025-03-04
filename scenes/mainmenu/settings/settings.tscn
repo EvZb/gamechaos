@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://cejtb2clvbyur"]
 
-[ext_resource type="Script" path="res://scenes/mainmenu/settings/settings.gd" id="1_4vr1m"]
-[ext_resource type="Script" path="res://scenes/mainmenu/settings/game.gd" id="2_bavnv"]
-[ext_resource type="Script" path="res://scenes/mainmenu/settings/controls.gd" id="3_xx4gu"]
-[ext_resource type="Script" path="res://scenes/mainmenu/settings/graphics.gd" id="4_lxu6i"]
-[ext_resource type="Script" path="res://scenes/mainmenu/settings/other.gd" id="5_sgget"]
+[ext_resource type="Script" uid="uid://b3xqcwlrk0vkp" path="res://scenes/mainmenu/settings/settings.gd" id="1_4vr1m"]
+[ext_resource type="Script" uid="uid://cvg0a1bxyjm42" path="res://scenes/mainmenu/settings/game.gd" id="2_bavnv"]
+[ext_resource type="Script" uid="uid://dj3rl0egwiwid" path="res://scenes/mainmenu/settings/controls.gd" id="3_xx4gu"]
+[ext_resource type="Script" uid="uid://6eykqj7n1rwj" path="res://scenes/mainmenu/settings/graphics.gd" id="4_lxu6i"]
+[ext_resource type="Script" uid="uid://rukomwqx07u7" path="res://scenes/mainmenu/settings/other.gd" id="5_sgget"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -84,6 +84,7 @@ alignment = 1
 selected = 0
 item_count = 6
 popup/item_0/text = "1"
+popup/item_0/id = 0
 popup/item_1/text = "2"
 popup/item_1/id = 1
 popup/item_2/text = "3"
@@ -107,6 +108,7 @@ alignment = 1
 selected = 0
 item_count = 5
 popup/item_0/text = "0"
+popup/item_0/id = 0
 popup/item_1/text = "1"
 popup/item_1/id = 1
 popup/item_2/text = "2"
@@ -197,6 +199,7 @@ expand_icon = true
 selected = 0
 item_count = 2
 popup/item_0/text = "Fullscreen Off"
+popup/item_0/id = 0
 popup/item_1/text = "Fullscreen On"
 popup/item_1/id = 1
 metadata/_edit_lock_ = true
@@ -214,6 +217,7 @@ expand_icon = true
 selected = 0
 item_count = 9
 popup/item_0/text = "854x480"
+popup/item_0/id = 0
 popup/item_1/text = "960x540"
 popup/item_1/id = 1
 popup/item_2/text = "1024x576"

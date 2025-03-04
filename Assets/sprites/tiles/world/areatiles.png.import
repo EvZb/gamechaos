@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bn8wvhb4fld7l"
-path="res://.godot/imported/areatiles.png-869f9f33c16cb115741b597b7c75be20.ctex"
+path="res://.godot/imported/areatiles.png-4882677e6e9df9f1caa767d0922ceab2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/tiles/world/areatiles.png"
-dest_files=["res://.godot/imported/areatiles.png-869f9f33c16cb115741b597b7c75be20.ctex"]
+source_file="res://assets/sprites/tiles/world/areatiles.png"
+dest_files=["res://.godot/imported/areatiles.png-4882677e6e9df9f1caa767d0922ceab2.ctex"]
 
 [params]
 

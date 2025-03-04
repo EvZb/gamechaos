@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8t3qpgur2qts"
-path="res://.godot/imported/Bullets.png-bb49889ae074bde1b6c8e104527f316d.ctex"
+path="res://.godot/imported/Bullets.png-b72e62f19c726146c1c2d517177d4dea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/items/Ammo/Bullets.png"
-dest_files=["res://.godot/imported/Bullets.png-bb49889ae074bde1b6c8e104527f316d.ctex"]
+source_file="res://assets/sprites/items/Ammo/Bullets.png"
+dest_files=["res://.godot/imported/Bullets.png-b72e62f19c726146c1c2d517177d4dea.ctex"]
 
 [params]
 

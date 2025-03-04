@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://c31uqenbe0hdk"]
 
-[ext_resource type="Script" path="res://scenes/startmenu/startmenu.gd" id="1_ichsk"]
-[ext_resource type="Script" path="res://scenes/startmenu/character.gd" id="3_jbhuy"]
-[ext_resource type="Script" path="res://scenes/startmenu/world.gd" id="5_a33vh"]
-[ext_resource type="Script" path="res://scenes/startmenu/generate.gd" id="6_c26v5"]
+[ext_resource type="Script" uid="uid://o2q6xxvqy0mt" path="res://scenes/startmenu/startmenu.gd" id="1_ichsk"]
+[ext_resource type="Script" uid="uid://bu0bd80j7rx11" path="res://scenes/startmenu/character.gd" id="3_jbhuy"]
+[ext_resource type="Script" uid="uid://dhnorctiye4sk" path="res://scenes/startmenu/world.gd" id="5_a33vh"]
+[ext_resource type="Script" uid="uid://dq2ri2pg66io8" path="res://scenes/startmenu/generate.gd" id="6_c26v5"]
 
 [node name="StartMenu" type="CanvasLayer"]
 script = ExtResource("1_ichsk")
@@ -166,7 +166,7 @@ offset_bottom = 32.0
 min_value = 32.0
 max_value = 128.0
 step = 16.0
-value = 32.0
+value = 128.0
 scrollable = false
 tick_count = 7
 metadata/_edit_lock_ = true

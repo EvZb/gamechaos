@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://lsrxvac0naol"
-path="res://.godot/imported/Rocket.png-e62ca3c87af7f999f8fdb8f8093938f5.ctex"
+path="res://.godot/imported/Rocket.png-4059109577beb642328ecfbe3b513fa7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/items/Ammo/Rocket.png"
-dest_files=["res://.godot/imported/Rocket.png-e62ca3c87af7f999f8fdb8f8093938f5.ctex"]
+source_file="res://assets/sprites/items/Ammo/Rocket.png"
+dest_files=["res://.godot/imported/Rocket.png-4059109577beb642328ecfbe3b513fa7.ctex"]
 
 [params]
 
