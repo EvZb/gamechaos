@@ -1,9 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://dba6o44iowqex"]
 
-[ext_resource type="Texture2D" uid="uid://ck7xeh1bkuc5v" path="res://Assets/sprites/creatures/human.png" id="1_yvult"]
-[ext_resource type="Script" path="res://scenes/game/player.gd" id="2_dbid7"]
+[ext_resource type="Texture2D" uid="uid://ck7xeh1bkuc5v" path="res://assets/sprites/creatures/human.png" id="1_yvult"]
+[ext_resource type="Script" uid="uid://vo4hyhweond2" path="res://scenes/game/player.gd" id="2_dbid7"]
 
 [node name="Player" type="Sprite2D"]
+z_index = 1
 texture = ExtResource("1_yvult")
 offset = Vector2(64, 64)
 region_enabled = true

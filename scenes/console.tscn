@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://brp2plpbnjtdm"]
 
-[ext_resource type="Script" path="res://scenes/console.gd" id="1_rxdgl"]
+[ext_resource type="Script" uid="uid://csdgryf8r0t2m" path="res://scenes/console.gd" id="1_rxdgl"]
 
 [node name="Console" type="CanvasLayer"]
 script = ExtResource("1_rxdgl")

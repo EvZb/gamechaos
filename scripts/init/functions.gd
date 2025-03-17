@@ -6,22 +6,32 @@ func SetTile(layer:String,coord:Vector2i,tile:int) -> void:
 func SaveWorld(worldname:String,savenum:int) -> void:
 	var scene = PackedScene.new()
 	scene.pack($/root/Main/Game)
-	D.game.scene = scene
 	if(!DirAccess.dir_exists_absolute("user://saves/worlds/"+worldname)):
 		DirAccess.make_dir_absolute("user://saves/worlds/"+worldname)
 	var file = ConfigFile.new()
-	file.set_value("Data","WorldData",D.game)
+	file.set_value("Data","Game",D.game)
+	file.set_value("Data","Scene",scene)
+	file.set_value("Data","Server",D.server)
 	file.save("user://saves/worlds/"+worldname+"/"+str(savenum)+".ini")
-	D.game.scene = PackedScene.new()
 
-func LoadWorld(worldname:String,savenum:int):
+func LoadWorld(worldname:String,savenum:int) -> Error:
 	var file = ConfigFile.new()
 	var check = file.load("user://saves/worlds/"+worldname+"/"+str(savenum)+".ini")
-	if check == OK: D.game = file.get_value("Data","WorldData")
+	if check == OK:
+		D.game = file.get_value("Data","Game")
+		D.server = file.get_value("Data","Server")
+	else:
+		$/root/Main/Console.Log("Error loading world.")
+		return FAILED
+	V.GAMERUNNING = false
 	$/root/Main/Game.free()
-	$/root/Main.add_child(D.game.scene.instantiate())
+	var scene = file.get_value("Data","Scene").instantiate()
+	$/root/Main.add_child(scene)
 	$/root/Main.move_child($/root/Main/Game,0)
 	F.MainMenu()
+	$/root/Main/MainMenu.hide()
+	V.GAMERUNNING = true
+	return OK
 
 func MainMenu() -> void:
 	if(V.MAIN_MENU_OPEN and V.GAMERUNNING):
@@ -29,9 +39,7 @@ func MainMenu() -> void:
 		$/root/Main/MainMenu.hide()
 		$/root/Main/MainMenu.hide_menus()
 		if(!V.MULTIPLAYER): $/root/Main/Game.pause(false)
-		$/root/Main/Game/Player.set_physics_process(true)
 	elif(V.MAIN_MENU_OPEN == false):
-		$/root/Main/Game/Player.set_physics_process(false)
 		if(!V.MULTIPLAYER): $/root/Main/Game.pause(true)
 		V.MAIN_MENU_OPEN = true
 		$/root/Main/MainMenu.show()
@@ -56,3 +64,9 @@ func AddItemMat(basename:String,mass:int,element:String,affinity:int,value:int,e
 	mat.Effects = effects
 	V.IMats.push_back(basename)
 	V.IMat.push_back(mat)
+
+func Move() -> void:
+	pass
+
+func Spawn() -> void:
+	pass

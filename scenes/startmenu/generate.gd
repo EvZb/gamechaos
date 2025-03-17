@@ -2,15 +2,16 @@ extends Node
 
 var biome:Array[Vector2i] = []
 var biomeshuffle:Array[Vector2i] = []
-var biomecount:int = V.BIOMETILES.size()
+var biomecount:int = V.BIOMES.size()
 var tiles:Node
-var maxsize:int = 128
+var maxsize:int
 var settings:Dictionary
 
 func Set(coord:Vector2i,tile:Vector2i) -> void:
 	tiles.set_cell(coord,0,tile)
 
 func Generate() -> void:
+	maxsize = S.Worldgen["Size"]
 	$/root/Main.add_child(load("res://scenes/game/game.tscn").instantiate())
 	$/root/Main.move_child($/root/Main/Game,0)
 	D.game = GameData.new()
@@ -42,7 +43,7 @@ func GenerateBiomes() -> void:
 	var biomenum:int
 	var biomename:String
 	var coord:Vector2i
-	biomeshuffle = V.BIOMETILES.duplicate()
+	biomeshuffle = V.BIOMES.values()
 	for i in biomecount: biome.push_back(biomeshuffle.pop_at(randi()%biomeshuffle.size()))
 	for c in maxsize / biomecount:
 		for b in maxsize/biomecount:
@@ -50,7 +51,7 @@ func GenerateBiomes() -> void:
 			biomeloc = Vector2i(randi()%maxsize,randi()%maxsize)
 			biomenum = randi()%biomecount
 			currentbiome = biome[biomenum]
-			biomename = V.BIOMENAMES[biomenum]
+			biomename = V.BIOMES.keys()[biomenum]
 			currentheight = 0
 			Set(biomeloc,currentbiome)
 			#generate left side of biome

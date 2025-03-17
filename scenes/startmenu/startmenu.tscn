@@ -186,4 +186,4 @@ metadata/_edit_lock_ = true
 [connection signal="text_changed" from="Menus/Character/Weight" to="Menus/Character" method="_on_number_box_input" binds= ["Weight"]]
 [connection signal="pressed" from="Menus/Character/Finish" to="Menus/Character" method="_on_finish_pressed"]
 [connection signal="pressed" from="Menus/World/Finish" to="Menus/World" method="_on_finish_pressed"]
-[connection signal="drag_ended" from="Menus/World/WSize" to="Menus/World" method="_on_wsize_changed"]
+[connection signal="value_changed" from="Menus/World/WSize" to="Menus/World" method="_on_wsize_changed"]

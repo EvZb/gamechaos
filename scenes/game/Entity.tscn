@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://kg6rk3rsyew3"]
+
+[node name="Entity" type="Sprite2D"]
+z_index = 2
+offset = Vector2(64, 64)

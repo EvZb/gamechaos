@@ -13,7 +13,7 @@ config_version=5
 config/name="Unnamed Game Chaos"
 config/version="dev"
 run/main_scene="res://scenes/main.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/show_image=false
 boot_splash/use_filter=false
 
@@ -23,6 +23,7 @@ V="*res://scripts/init/variables.gd"
 F="*res://scripts/init/functions.gd"
 S="*res://scripts/init/settings.gd"
 D="*res://scripts/init/data.gd"
+M="*res://scripts/init/multiplayer.gd"
 LoadScript="res://scripts/init/loadscript.gd"
 
 [debug]

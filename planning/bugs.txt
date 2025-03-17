@@ -1,4 +1,3 @@
 Check multiplayer creation and joining
--join is broken after starting game
--disconnect doesn't work after join
--errors caused by failed authentiacation / disconnection
+-saves menu incomplete
+-multiplayer world data is incorrect (could be save data that is wrong instead)

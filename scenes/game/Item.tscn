@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://bwpr0i8llalkx"]
+
+[node name="Item" type="Sprite2D"]
+offset = Vector2(64, 64)

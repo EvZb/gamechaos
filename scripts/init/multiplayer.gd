@@ -27,8 +27,12 @@ func Join(addr:String,port:int,passwd:String) -> Error:
 		console.Log("Failed to join game.")
 		return FAILED
 	multiplayer.multiplayer_peer = join
-	V.MULTIPLAYER = true
 	console.Log("Joined game [%s:%s]." % [addr,str(port)])
+	V.MULTIPLAYER = true
+	V.GAMERUNNING = true
+	$/root/Main/MainMenu/Options/Leave.hide()
+	$/root/Main/MainMenu/Options/Disconnect.show()
+	$/root/Main/MainMenu/Options/Start.hide()
 	return OK
 
 func Host(port:int,max_connections:int,passwd:String) -> Error:
@@ -41,6 +45,7 @@ func Host(port:int,max_connections:int,passwd:String) -> Error:
 	if error:
 		console.Log("Game creation failed.")
 		return FAILED
+	V.MULTIPLAYER = true
 	multiplayer.multiplayer_peer = host
 	console.Log("Created game on port %s." % str(port))
 	$/root/Main/Multiplayer/Menu/Config.hide()
@@ -60,10 +65,24 @@ func Leave() -> void:
 		pid = 1
 	$/root/Main/Multiplayer/Menu/Config.show()
 	$/root/Main/Multiplayer/Menu/Servers.show()
+	$/root/Main/MainMenu/Options/Leave.show()
+	$/root/Main/MainMenu/Options/Disconnect.hide()
 
 func Load() -> void: # What happens after intitial connection
 	$/root/Main/MainMenu/Options/Start.hide()
 	$/root/Main/MainMenu/Options/Leave.show()
+
+#@rpc("any_peer","reliable")
+#func transfer(data:PackedByteArray, filename:String):
+#	var cfile=FileAccess.open("res://file",FileAccess.WRITE )
+#	cfile.store_buffer(data)
+#	pass
+
+#func transfer_file():
+#	var file := FileAccess.open("res://file",FileAccess.READ)
+#	print(file.get_length())
+#	transfer.rpc(FileAccess.get_file_as_bytes("res://file"),"filename")
+#	pass
 
 func _sendauthclient(id:int):
 	multiplayer.send_auth(id,password.to_ascii_buffer())
@@ -80,10 +99,19 @@ func _authserver(id:int,data:PackedByteArray):
 	if(data.get_string_from_ascii() == "server"): multiplayer.complete_auth(id)
 
 func _authfail(id:int) -> void:
-	console.Log("Authentication failed." % id)
+	console.Log("Authentication failed (%s)." % id)
+	if(id == 1):
+		Leave()
+		$/root/Main/Multiplayer.show()
+		$/root/Main/MainMenu/Options/Leave.hide()
+		$/root/Main/MainMenu/Options/Start.show()
 
 func _connect(id:int) -> void:
 	if(id != 1):
+		var file = ConfigFile.new()
+		file.set_value("temp","game",D.game)
+		file.save("user://temp")
+		D.LoadMP.rpc_id(id, FileAccess.get_file_as_bytes("user://temp"))
 		console.Log("Connected (%s)" % str(id))
 
 func _disconnect(id:int) -> void:
@@ -95,9 +123,8 @@ func _connectserver() -> void:
 	pid = multiplayer.get_unique_id()
 
 func _connectfail() -> void:
-	multiplayer.multiplayer_peer = null
 	console.Log("Connection failed.")
+	Leave()
 
 func _disconnectserver() -> void:
 	console.Log("Server disconnected.")
-	Leave()

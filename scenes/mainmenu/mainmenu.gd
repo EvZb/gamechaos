@@ -52,10 +52,8 @@ func _on_leave_pressed() -> void:
 	$SubMenu/Initial.show()
 	$Options/Leave.hide()
 	$Options/Start.show()
-	$/root/Main/Multiplayer.Leave()
+	V.GAMERUNNING = false
 	$/root/Main/Game.free()
 
 func _on_disconnect_pressed() -> void:
-	$/root/Main/Multiplayer.Leave()
-	$Options/Disconnect.hide()
-	$Options/Leave.show()
+	M.Leave()

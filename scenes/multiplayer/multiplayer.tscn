@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c7oy1x0h1bho4"]
 
-[ext_resource type="Script" path="res://scenes/multiplayer/multiplayer.gd" id="1_3i6mb"]
+[ext_resource type="Script" uid="uid://dnyc5j631jj8c" path="res://scenes/multiplayer/multiplayer.gd" id="1_3i6mb"]
 
 [node name="Multiplayer" type="CanvasLayer"]
 visible = false
